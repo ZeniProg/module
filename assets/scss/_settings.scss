@@ -40,8 +40,22 @@ body {
 
 .container {
 	margin: 0 auto;
-	padding: 0 15px;
-	max-width: $container-width + px;
+	padding: 0 45px;
+	padding-bottom: 80px;
+	max-width: 1250px;
+
+	&--line {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: calc(100% - 90px);
+			height: 2px;
+			background-color: var(--accent-color);
+		}
+	}
 }
 
 img {

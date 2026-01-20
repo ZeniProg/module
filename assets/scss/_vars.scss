@@ -1,12 +1,13 @@
 // * Максимальная и минимальная ширина макета
-$container-width: 1190;
-$mobile-width: 300;
+$container-width: 1440;
+$mobile-width: 390;
 
 :root {
 	// * Цвета
 	--dark-color: #000;
 	--light-color: #fff;
 	--text-color: var(--light-color);
+	--link-color: #f5f5f5;
 	--bg-color: #292929;
 	--light-bg-color: #3d3d3d;
 	--accent-color: #3472e5;
@@ -15,12 +16,12 @@ $mobile-width: 300;
 	// * Шрифты
 	--font-main: 'Montserrat', sans-serif;
 	--font-second: 'Bounded', sans-serif;
-	--line-height: 120%;
+	--line-height: 110%;
 
 	// * Визуал
 	--time: 0.3s;
 	--radius: 20px;
 
 	// * Медиа бургера
-	--mobile-width: 768;
+	--mobile-width: 1170;
 }
