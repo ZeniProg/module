@@ -1,11 +1,15 @@
 import path from 'path';
 import TerserPlugin from 'terser-webpack-plugin';
+
 const isDev = !process.argv.includes('--build');
 
 export default {
-	entry: './assets/js/scripts.js',
+	entry: {
+		libs: './assets/js/libs.js',
+		main: './assets/js/scripts.js',
+	},
 	output: {
-		filename: 'scripts.min.js',
+		filename: '[name].min.js', // libs.min.js и main.min.js
 		path: path.resolve('./build/js'),
 	},
 	mode: isDev ? 'development' : 'production',
@@ -24,6 +28,7 @@ export default {
 				extractComments: false,
 			}),
 		],
+		splitChunks: false,
 	},
 	module: {
 		rules: [],
