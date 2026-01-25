@@ -1,5 +1,7 @@
 import { Swiper, Navigation, Pagination } from '../libs.js';
 
+let newsSlider;
+
 export function initSliders() {
 	new Swiper('.partners-slider', {
 		modules: [Navigation, Pagination],
@@ -19,16 +21,16 @@ export function initSliders() {
 				slidesPerView: 4,
 				pagination: false,
 				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
+					nextEl: '.partners__nav--next',
+					prevEl: '.partners__nav--prev',
 				},
 			},
 			992: {
 				slidesPerView: 6,
 				pagination: false,
 				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
+					nextEl: '.partners__nav--next',
+					prevEl: '.partners__nav--prev',
 				},
 			},
 		},
@@ -50,20 +52,83 @@ export function initSliders() {
 			},
 			769: {
 				slidesPerView: 2,
+				pagination: {
+					el: '.projects__pagination',
+					clickable: true,
+				},
+				navigation: false,
+			},
+			992: {
+				slidesPerView: 2,
 				pagination: false,
 				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
+					nextEl: '.projects__nav--next',
+					prevEl: '.projects__nav--prev',
 				},
 			},
 			1200: {
 				slidesPerView: 3,
 				pagination: false,
 				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
+					nextEl: '.projects__nav--next',
+					prevEl: '.projects__nav--prev',
 				},
 			},
 		},
 	});
+
+	if (window.innerWidth <= 1400 && !newsSlider) {
+		newsSlider = new Swiper('.news-slider', {
+			modules: [Navigation, Pagination],
+			slidesPerView: 3,
+			spaceBetween: 20,
+			navigation: {
+				nextEl: '.news__nav--next',
+				prevEl: '.news__nav--prev',
+			},
+			pagination: {
+				el: '.news__pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+					pagination: {
+						el: '.news__pagination',
+						clickable: true,
+					},
+					navigation: false,
+				},
+				769: {
+					slidesPerView: 2,
+					pagination: {
+						el: '.news__pagination',
+						clickable: true,
+					},
+					navigation: false,
+				},
+				992: {
+					slidesPerView: 2,
+					pagination: false,
+					navigation: {
+						nextEl: '.news__nav--next',
+						prevEl: '.news__nav--prev',
+					},
+				},
+				1200: {
+					slidesPerView: 3,
+					pagination: false,
+					navigation: {
+						nextEl: '.news__nav--next',
+						prevEl: '.news__nav--prev',
+					},
+				},
+			},
+		});
+	}
+
+	if (window.innerWidth > 1400 && newsSlider) {
+		newsSlider.destroy(true, true);
+		newsSlider = null;
+	}
 }
