@@ -10,6 +10,19 @@
 		padding-top: 20px;
 		padding-bottom: 20px;
 		background-color: var(--bg-color);
+
+		&--line {
+			position: relative;
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				width: calc(100% - 90px);
+				height: 2px;
+				background-color: var(--accent-color);
+			}
+		}
 	}
 
 	&--sticky {
