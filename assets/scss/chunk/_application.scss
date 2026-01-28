@@ -1,0 +1,42 @@
+.application {
+	display: grid;
+	gap: 40px;
+
+	&__decor-block {
+		justify-self: end;
+		width: 217px;
+		height: 217px;
+		background-image: url('@img/application/decor-block.svg');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+		@media (max-width: 1200px) {
+			display: none;
+		}
+	}
+}
+
+.application-cards {
+	display: grid;
+	gap: 40px;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.application-card {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+
+	&__img {
+		overflow: hidden;
+		border-radius: 20px;
+		height: 220px;
+	}
+
+	&__descr {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}
