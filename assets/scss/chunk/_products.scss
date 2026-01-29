@@ -300,3 +300,35 @@
 		line-height: 120%;
 	}
 }
+
+.direction-products-tabs {
+	.products-tabs__header {
+		background-color: var(--light-bg-color);
+	}
+
+	.tabs__header-items {
+		display: flex;
+
+		@media (max-width: 1400px) {
+			flex-direction: column;
+		}
+	}
+
+	.tabs__header-item {
+		margin: 0 10px;
+		border-radius: 20px 20px 0 0;
+		padding: 15px 20px;
+
+		&.active {
+			background-color: var(--bg-color);
+
+			@media (max-width: 1400px) {
+				border-radius: 10px;
+			}
+		}
+
+		@media (max-width: 1400px) {
+			text-align: center;
+		}
+	}
+}
